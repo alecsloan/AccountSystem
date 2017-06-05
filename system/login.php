@@ -14,6 +14,11 @@ if (!empty($_POST['email']) && !empty($_POST['password'])){
         $hash = $row['hashedPassword'];
         $verify = password_verify($formPassword,$hash);
         if($verify){
+            $ip = $_SERVER['REMOTE_ADDR'];
+            $ip = filter_var($ip, FILTER_VALIDATE_IP);
+            $ip = ($ip === false) ? '0.0.0.0' : $ip;
+            $sql = "update user_table set lastIP='".$ip."' where email='".$formEmail."'";
+            mysqli_query($link, $sql);
             session_start();
             $_SESSION['Email'] = $formEmail;
             $_SESSION['UID'] = $row['id'];
