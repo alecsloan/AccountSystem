@@ -1,3 +1,5 @@
+I made this project as a learning process for PHP and user/login based systems.
+
 Prerequisites:
 - Operational Web Server Environment with:
   - PHP
@@ -29,3 +31,9 @@ File: login.php | Lines: 7,11
 
 File: signup.php| Lines: 3,7,13
 
+TODO:
+There's still alot to do with this project security and feature wise.
+* Data sanitation
+* Account recovery
+* Account confirmation 
+* Much more I can't think of at the moment
